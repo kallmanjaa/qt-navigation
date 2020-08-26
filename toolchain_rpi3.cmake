@@ -1,0 +1,5 @@
+SET(CMAKE_SYSTEM_NAME Linux)
+
+##  specify the cross compiler
+SET(CMAKE_C_COMPILER   ${TARGET_PREFIX}gcc)
+SET(CMAKE_CXX_COMPILER ${TARGET_PREFIX}g++)

@@ -1,0 +1,19 @@
+#!/bin/bash
+set -eux -o pipefail
+
+prerm::kill_uninstall_service(){
+
+    systemctl disable navigation.service || true
+    systemctl stop navigation.service || true
+    systemctl daemon-reload || true
+
+}
+
+
+main() {
+    prerm::kill_uninstall_service
+}
+
+# shellcheck disable=SC2128
+([[ "$0" == "$BASH_SOURCE" ]] && main "$@")
+

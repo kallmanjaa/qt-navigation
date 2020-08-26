@@ -1,0 +1,25 @@
+#!/bin/bash
+set -eux -o pipefail
+
+postinst::start_daemon(){
+
+    #if [ $(systemctl is-active erweka_appserver.service) == "active" ] ; then
+      #systemctl disable erweka_appserver.service # check again, safe
+    #fi
+
+    systemctl disable navigation.service || true
+    systemctl daemon-reload || true
+    systemctl enable navigation.service
+    systemctl start navigation.service || true
+    systemctl status navigation.service || true
+
+}
+
+main() {
+
+    postinst::start_daemon
+}
+
+# shellcheck disable=SC2128
+([[ "$0" == "$BASH_SOURCE" ]] && main "$@")
+
