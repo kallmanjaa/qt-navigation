@@ -48,7 +48,7 @@
 **
 ****************************************************************************/
 
-#include "mainwindow.h"
+#include "Navigation.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
@@ -57,9 +57,9 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication app(argc, argv);
 
-    MainWindow mainWindow;
-    mainWindow.resize(1024, 768);
-    mainWindow.show();
+    Navigation navigation;
+    navigation.resize(1024, 768);
+    navigation.show();
 
     return app.exec();
 }

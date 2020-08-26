@@ -48,11 +48,11 @@
 **
 ****************************************************************************/
 
-#include "mainwindow.h"
+#include "Navigation.h"
 
 #include <QMessageBox>
 
-MainWindow::MainWindow(QWidget *parent)
+Navigation::Navigation(QWidget *parent)
     : QMainWindow(parent)
     , m_view(new QWebEngineView(this))
 {

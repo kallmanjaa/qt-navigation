@@ -1,17 +1,17 @@
 PROJECT(navigation)
+set(CMAKE_AUTOMOC ON)
 
 SET(QT_APP_PATH /usr/local/bin)
 
-FIND_PACKAGE(Qt5 REQUIRED COMPONENTS Core WebEngine Network)
+FIND_PACKAGE(Qt5 REQUIRED COMPONENTS Core WebEngine Widgets WebEngineWidgets Network)
 
-
-SET(SOURCE "src/Navigation.cpp")
-
+SET(SOURCE_FILES "src/Navigation.cpp")
+SET(HEADER_FILES "headers/Navigation.h")
 INCLUDE_DIRECTORIES(headers)
 
-ADD_EXECUTABLE(${PROJECT_NAME} "src/main.cpp" ${SOURCE_PARSER} 
+ADD_EXECUTABLE(${PROJECT_NAME} "src/main.cpp" ${HEADER_FILES} ${SOURCE_FILES} )
 
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} Qt5::WebEngine)
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} Qt5::Widgets Qt5::WebEngineWidgets Qt5::WebEngine)
 
 INSTALL(TARGETS ${PROJECT_NAME} DESTINATION ${QT_APP_PATH})
 

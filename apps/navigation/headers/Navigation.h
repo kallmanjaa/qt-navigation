@@ -48,21 +48,21 @@
 **
 ****************************************************************************/
 
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef NAVIGATION_H
+#define NAVIGATION_H
 
 #include <QMainWindow>
 #include <QWebEngineView>
 
-class MainWindow : public QMainWindow
+class Navigation : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit Navigation(QWidget *parent = nullptr);
 
 private:
     QWebEngineView *m_view;
 };
 
-#endif // MAINWINDOW_H
+#endif // NAVIGATION_H
 
